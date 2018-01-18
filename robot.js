@@ -1,6 +1,6 @@
 (function () {
   'use strict';
-
+// If you review the last lecture in the next Sunday,it is going to be more clear in our brain.
   const board = [
     ['T', 'T', '.', 'F'],
     ['T', '.', '.', '.'],
@@ -96,16 +96,36 @@
 
     switch (robot.dir) {
       case 'up':
-        y = y < board.length - 1 ? y + 1 : y;
+        if (y < board.length - 1) {
+          y = y + 1;
+        } else {
+          y;
+        }  
+        //y = y < board.length - 1 ? y + 1 : y;
         break;
       case 'down':
-        y = y > 0 ? y - 1 : y;
+        if (y > 0) {
+          y = y - 1;
+        } else {
+          y;  
+      }
+        //y = y > 0 ? y - 1 : y;
         break;
       case 'left':
-        x = x > 0 ? x - 1 : x;
+        if (x > 0) {
+          x = x - 1;
+        } else {
+          x;  
+      }
+        //x = x > 0 ? x - 1 : x;
         break;
       case 'right':
-        x = x < board[y].length - 1 ? x + 1 : x;
+        if (x < board[y].length - 1) {
+          x = x + 1;
+        } else {
+          x;
+        }  
+        //x = x < board[y].length - 1 ? x + 1 : x;
         break;
     }
 
@@ -142,16 +162,36 @@
 
     switch (robot.dir) {
       case 'up':
-        robot.dir = turnDirection === 'left' ? 'left' : 'right';
+        if (turnDirection === "left") {
+          robot.dir = "left";
+        } else {
+          robot.dir = "right";  
+      }
+        //robot.dir = turnDirection === 'left' ? 'left' : 'right';
         break;
       case 'down':
-        robot.dir = turnDirection === 'left' ? 'right' : 'left';
+        if (turnDirection === "left") {
+          robot.dir = "right";
+        } else {
+          robot.dir = "left";
+        }  
+        //robot.dir = turnDirection === 'left' ? 'right' : 'left';
         break;
       case 'left':
-        robot.dir = turnDirection === 'left' ? 'down' : 'up';
+        if (turnDirection === "left") {
+          robot.dir = "down";
+        } else {
+          robot.dir = "up";
+        }  
+        //robot.dir = turnDirection === 'left' ? 'down' : 'up';
         break;
       case 'right':
-        robot.dir = turnDirection === 'left' ? 'up' : 'down';
+        if (turnDirection === "left") {
+          robot.dir = "up";
+        } else {
+          robot.dir = "down";
+        }  
+        //robot.dir = turnDirection === 'left' ? 'up' : 'down';
         break;
     }
 
